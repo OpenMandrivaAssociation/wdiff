@@ -10,7 +10,6 @@ Source0: ftp://ftp.gnu.org/pub/gnu/wdiff/%{name}-%{version}.tar.bz2
 Patch: wdiff-0.5-debian-16.patch.bz2
 License: GPL
 Group: Text tools
-BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libtermcap-devel
 BuildRequires: texinfo
 BuildRequires: autoconf2.1
