@@ -1,6 +1,6 @@
 %define name wdiff
 %define version 0.5
-%define release %mkrel 8
+%define release %mkrel 9
 
 Summary: Word-based diff front end
 Name: %{name}
@@ -13,7 +13,6 @@ Group: Text tools
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libtermcap-devel
 BuildRequires: texinfo
-BuildRequires: autoconf2.1
 URL: http://www.gnu.org/software/wdiff/wdiff.html
 
 %description
@@ -31,7 +30,7 @@ been refilled.
 autoconf
 
 %build
-%configure --enable-cbars
+%configure2_5x --enable-cbars
 %make
 
 %install
