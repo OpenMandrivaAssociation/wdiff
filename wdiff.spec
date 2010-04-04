@@ -1,13 +1,12 @@
 %define name wdiff
-%define version 0.5
-%define release %mkrel 9
+%define version 0.6.1
+%define release %mkrel 1
 
 Summary: Word-based diff front end
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: ftp://ftp.gnu.org/pub/gnu/wdiff/%{name}-%{version}.tar.bz2
-Patch: wdiff-0.5-debian-16.patch.bz2
 License: GPLv2+
 Group: Text tools
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -26,16 +25,17 @@ been refilled.
 
 %prep
 %setup -q
-%patch -p1 -b .debian
-autoconf
 
 %build
-%configure2_5x --enable-cbars
+%configure2_5x
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT *.lang
 %makeinstall
+%find_lang %name
+%find_lang %name-gnulib
+cat %name-gnulib.lang >> %name.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -46,9 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 %preun
 %_remove_install_info %{name}.info
 
-%files
+%files -f %name.lang
 %defattr(-,root,root)
 %doc README NEWS THANKS TODO COPYING ChangeLog BACKLOG
 %{_bindir}/wdiff
-%{_bindir}/cbars
+%_mandir/man1/wdiff.1*
 %{_infodir}/wdiff.info*
