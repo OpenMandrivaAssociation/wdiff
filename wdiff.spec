@@ -2,17 +2,17 @@
 %define version 0.6.3
 %define release %mkrel 1
 
-Summary: Word-based diff front end
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: ftp://ftp.gnu.org/pub/gnu/wdiff/%{name}-%{version}.tar.bz2
-License: GPLv2+
-Group: Text tools
-BuildRoot: %{_tmppath}/%{name}-buildroot
-BuildRequires: libtermcap-devel
-BuildRequires: texinfo
-URL: http://www.gnu.org/software/wdiff/wdiff.html
+Summary:	Word-based diff front end
+Name:		wdiff
+Version:	0.6.5
+Release:	%mkrel 1
+URL:		http://www.gnu.org/software/wdiff/wdiff.html
+Source0:	ftp://ftp.gnu.org/pub/gnu/wdiff/%{name}-%{version}.tar.gz
+License:	GPLv2+
+Group:		Text tools
+BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	libtermcap-devel
+BuildRequires:	texinfo
 
 %description
 GNU wdiff is a front-end to GNU diff.  It compares two files, finding
@@ -31,14 +31,14 @@ been refilled.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT *.lang
+rm -rf %buildroot *.lang
 %makeinstall
 %find_lang %name
 %find_lang %name-gnulib
 cat %name-gnulib.lang >> %name.lang
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %buildroot
 
 %post
 %_install_info %{name}.info
