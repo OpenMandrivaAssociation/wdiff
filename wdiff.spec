@@ -4,8 +4,8 @@
 
 Summary:	Word-based diff front end
 Name:		wdiff
-Version:	0.6.5
-Release:	%mkrel 1
+Version:	%version
+Release:	%release
 URL:		http://www.gnu.org/software/wdiff/wdiff.html
 Source0:	ftp://ftp.gnu.org/pub/gnu/wdiff/%{name}-%{version}.tar.gz
 License:	GPLv2+
