@@ -1,5 +1,5 @@
 %define name wdiff
-%define version 1.1.0
+%define version 1.1.1
 %define release %mkrel 1
 
 Summary:	Word-based diff front end
@@ -10,8 +10,7 @@ URL:		http://www.gnu.org/software/wdiff/wdiff.html
 Source0:	ftp://ftp.gnu.org/pub/gnu/wdiff/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Text tools
-BuildRoot:	%{_tmppath}/%{name}-%{version}
-BuildRequires:	libtermcap-devel
+BuildRequires:	termcap-devel
 BuildRequires:	texinfo
 
 %description
@@ -37,9 +36,6 @@ rm -rf %buildroot *.lang
 %find_lang %name-gnulib
 cat %name-gnulib.lang >> %name.lang
 
-%clean
-rm -rf %buildroot
-
 %post
 %_install_info %{name}.info
 
@@ -47,7 +43,6 @@ rm -rf %buildroot
 %_remove_install_info %{name}.info
 
 %files -f %name.lang
-%defattr(-,root,root)
 %doc README NEWS THANKS TODO COPYING ChangeLog BACKLOG
 %{_bindir}/wdiff
 %_mandir/man1/wdiff.1*
