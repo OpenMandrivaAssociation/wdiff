@@ -47,3 +47,60 @@ cat %name-gnulib.lang >> %name.lang
 %{_bindir}/wdiff
 %_mandir/man1/wdiff.1*
 %{_infodir}/wdiff.info*
+
+
+%changelog
+* Thu May 31 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.1.2-1mdv2012.0
++ Revision: 801526
+- version update 1.1.2
+
+* Mon May 28 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.1.1-1
++ Revision: 800970
+- version update 1.1.1
+
+* Sat Nov 19 2011 Götz Waschk <waschk@mandriva.org> 1.1.0-1
++ Revision: 731831
+- new version
+
+* Tue Sep 20 2011 Götz Waschk <waschk@mandriva.org> 1.0.1-1
++ Revision: 700492
+- new version
+
+* Sun Sep 11 2011 Götz Waschk <waschk@mandriva.org> 1.0.0-1
++ Revision: 699393
+- new version
+- update to new version 1.0.0
+
+* Tue Dec 07 2010 Sandro Cazzaniga <kharec@mandriva.org> 0.6.5-1mdv2011.0
++ Revision: 614425
+- 0.6.5
+- spec cleanup
+- correct use of %%buildroot
+- fix source0
+
+* Sat Jul 10 2010 Götz Waschk <waschk@mandriva.org> 0.6.3-1mdv2011.0
++ Revision: 550276
+- update to new version 0.6.3
+
+* Sun Apr 04 2010 Götz Waschk <waschk@mandriva.org> 0.6.1-1mdv2010.1
++ Revision: 531349
+- new version
+- drop patch
+- update file list
+
+* Mon Jul 13 2009 Götz Waschk <waschk@mandriva.org> 0.5-9mdv2010.0
++ Revision: 395464
+- spec fix
+- update license
+
+* Fri Dec 21 2007 Olivier Blin <blino@mandriva.org> 0.5-8mdv2009.0
++ Revision: 136571
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Wed Jul 11 2007 Götz Waschk <waschk@mandriva.org> 0.5-8mdv2008.0
++ Revision: 51178
+- Import wdiff
+
