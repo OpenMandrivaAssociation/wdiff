@@ -37,8 +37,6 @@ rm -rf %buildroot *.lang
 cat %name-gnulib.lang >> %name.lang
 
 
-%preun
-%_remove_install_info %{name}.info
 
 %files -f %name.lang
 %doc README NEWS THANKS TODO COPYING ChangeLog BACKLOG
