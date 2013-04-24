@@ -1,6 +1,6 @@
 %define name wdiff
 %define version 1.1.2
-%define release %mkrel 1
+%define release  2
 
 Summary:	Word-based diff front end
 Name:		wdiff
