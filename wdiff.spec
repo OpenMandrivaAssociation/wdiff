@@ -36,8 +36,6 @@ rm -rf %buildroot *.lang
 %find_lang %name-gnulib
 cat %name-gnulib.lang >> %name.lang
 
-%post
-%_install_info %{name}.info
 
 %preun
 %_remove_install_info %{name}.info
