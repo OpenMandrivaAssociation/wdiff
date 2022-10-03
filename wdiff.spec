@@ -1,12 +1,12 @@
 Summary:	Word-based diff front end
 Name:		wdiff
 Version:	1.2.2
-Release:	3
+Release:	4
 URL:		http://www.gnu.org/software/wdiff/wdiff.html
-Source0:	ftp://ftp.gnu.org/pub/gnu/wdiff/%{name}-%{version}.tar.gz
+Source0:	https://ftp.gnu.org/gnu/wdiff/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Text tools
-BuildRequires:	termcap-devel
+BuildRequires:	pkgconfig(ncursesw)
 BuildRequires:	texinfo
 
 %description
@@ -19,25 +19,20 @@ been refilled.
 
 
 %prep
-%setup -q
+%autosetup -p1
+%configure
 
 %build
-%configure2_5x
-%make
+%make_build
 
 %install
-rm -rf %{buildroot} *.lang
-%makeinstall
+%make_install
 %find_lang %{name}
 %find_lang %{name}-gnulib
 cat %{name}-gnulib.lang >> %{name}.lang
-
-
 
 %files -f %{name}.lang
 %doc README NEWS THANKS TODO COPYING ChangeLog BACKLOG
 %{_bindir}/wdiff
 %{_mandir}/man1/wdiff.1*
 %{_infodir}/wdiff.info*
-
-
