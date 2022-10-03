@@ -8,6 +8,7 @@ License:	GPLv2+
 Group:		Text tools
 BuildRequires:	pkgconfig(ncursesw)
 BuildRequires:	texinfo
+BuildRequires:	help2man
 
 %description
 GNU wdiff is a front-end to GNU diff.  It compares two files, finding
